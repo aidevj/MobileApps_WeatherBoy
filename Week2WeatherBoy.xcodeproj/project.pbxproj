@@ -1,0 +1,491 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		023A78AA239E8AE4007EF27C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023A78A9239E8AE4007EF27C /* AppDelegate.swift */; };
+		023A78AC239E8AE4007EF27C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023A78AB239E8AE4007EF27C /* SceneDelegate.swift */; };
+		023A78AE239E8AE4007EF27C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023A78AD239E8AE4007EF27C /* ViewController.swift */; };
+		023A78B1239E8AE4007EF27C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 023A78AF239E8AE4007EF27C /* Main.storyboard */; };
+		023A78B4239E8AE4007EF27C /* Week2WeatherBoy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 023A78B2239E8AE4007EF27C /* Week2WeatherBoy.xcdatamodeld */; };
+		023A78B6239E8AE8007EF27C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 023A78B5239E8AE8007EF27C /* Assets.xcassets */; };
+		023A78B9239E8AE8007EF27C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 023A78B7239E8AE8007EF27C /* LaunchScreen.storyboard */; };
+		023A78C4239E8AE8007EF27C /* Week2WeatherBoyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023A78C3239E8AE8007EF27C /* Week2WeatherBoyTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		023A78C0239E8AE8007EF27C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 023A789E239E8AE4007EF27C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 023A78A5239E8AE4007EF27C;
+			remoteInfo = Week2WeatherBoy;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		023A78A6239E8AE4007EF27C /* Week2WeatherBoy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Week2WeatherBoy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		023A78A9239E8AE4007EF27C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		023A78AB239E8AE4007EF27C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		023A78AD239E8AE4007EF27C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		023A78B0239E8AE4007EF27C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		023A78B3239E8AE4007EF27C /* Week2WeatherBoy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Week2WeatherBoy.xcdatamodel; sourceTree = "<group>"; };
+		023A78B5239E8AE8007EF27C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		023A78B8239E8AE8007EF27C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		023A78BA239E8AE8007EF27C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		023A78BF239E8AE8007EF27C /* Week2WeatherBoyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Week2WeatherBoyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		023A78C3239E8AE8007EF27C /* Week2WeatherBoyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Week2WeatherBoyTests.swift; sourceTree = "<group>"; };
+		023A78C5239E8AE8007EF27C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		023A78A3239E8AE4007EF27C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		023A78BC239E8AE8007EF27C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		023A789D239E8AE4007EF27C = {
+			isa = PBXGroup;
+			children = (
+				023A78A8239E8AE4007EF27C /* Week2WeatherBoy */,
+				023A78C2239E8AE8007EF27C /* Week2WeatherBoyTests */,
+				023A78A7239E8AE4007EF27C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		023A78A7239E8AE4007EF27C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				023A78A6239E8AE4007EF27C /* Week2WeatherBoy.app */,
+				023A78BF239E8AE8007EF27C /* Week2WeatherBoyTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		023A78A8239E8AE4007EF27C /* Week2WeatherBoy */ = {
+			isa = PBXGroup;
+			children = (
+				023A78A9239E8AE4007EF27C /* AppDelegate.swift */,
+				023A78AB239E8AE4007EF27C /* SceneDelegate.swift */,
+				023A78AD239E8AE4007EF27C /* ViewController.swift */,
+				023A78AF239E8AE4007EF27C /* Main.storyboard */,
+				023A78B5239E8AE8007EF27C /* Assets.xcassets */,
+				023A78B7239E8AE8007EF27C /* LaunchScreen.storyboard */,
+				023A78BA239E8AE8007EF27C /* Info.plist */,
+				023A78B2239E8AE4007EF27C /* Week2WeatherBoy.xcdatamodeld */,
+			);
+			path = Week2WeatherBoy;
+			sourceTree = "<group>";
+		};
+		023A78C2239E8AE8007EF27C /* Week2WeatherBoyTests */ = {
+			isa = PBXGroup;
+			children = (
+				023A78C3239E8AE8007EF27C /* Week2WeatherBoyTests.swift */,
+				023A78C5239E8AE8007EF27C /* Info.plist */,
+			);
+			path = Week2WeatherBoyTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		023A78A5239E8AE4007EF27C /* Week2WeatherBoy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 023A78C8239E8AE8007EF27C /* Build configuration list for PBXNativeTarget "Week2WeatherBoy" */;
+			buildPhases = (
+				023A78A2239E8AE4007EF27C /* Sources */,
+				023A78A3239E8AE4007EF27C /* Frameworks */,
+				023A78A4239E8AE4007EF27C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Week2WeatherBoy;
+			productName = Week2WeatherBoy;
+			productReference = 023A78A6239E8AE4007EF27C /* Week2WeatherBoy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		023A78BE239E8AE8007EF27C /* Week2WeatherBoyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 023A78CB239E8AE8007EF27C /* Build configuration list for PBXNativeTarget "Week2WeatherBoyTests" */;
+			buildPhases = (
+				023A78BB239E8AE8007EF27C /* Sources */,
+				023A78BC239E8AE8007EF27C /* Frameworks */,
+				023A78BD239E8AE8007EF27C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				023A78C1239E8AE8007EF27C /* PBXTargetDependency */,
+			);
+			name = Week2WeatherBoyTests;
+			productName = Week2WeatherBoyTests;
+			productReference = 023A78BF239E8AE8007EF27C /* Week2WeatherBoyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		023A789E239E8AE4007EF27C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = MAC;
+				TargetAttributes = {
+					023A78A5239E8AE4007EF27C = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					023A78BE239E8AE8007EF27C = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 023A78A5239E8AE4007EF27C;
+					};
+				};
+			};
+			buildConfigurationList = 023A78A1239E8AE4007EF27C /* Build configuration list for PBXProject "Week2WeatherBoy" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 023A789D239E8AE4007EF27C;
+			productRefGroup = 023A78A7239E8AE4007EF27C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				023A78A5239E8AE4007EF27C /* Week2WeatherBoy */,
+				023A78BE239E8AE8007EF27C /* Week2WeatherBoyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		023A78A4239E8AE4007EF27C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				023A78B9239E8AE8007EF27C /* LaunchScreen.storyboard in Resources */,
+				023A78B6239E8AE8007EF27C /* Assets.xcassets in Resources */,
+				023A78B1239E8AE4007EF27C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		023A78BD239E8AE8007EF27C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		023A78A2239E8AE4007EF27C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				023A78B4239E8AE4007EF27C /* Week2WeatherBoy.xcdatamodeld in Sources */,
+				023A78AE239E8AE4007EF27C /* ViewController.swift in Sources */,
+				023A78AA239E8AE4007EF27C /* AppDelegate.swift in Sources */,
+				023A78AC239E8AE4007EF27C /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		023A78BB239E8AE8007EF27C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				023A78C4239E8AE8007EF27C /* Week2WeatherBoyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		023A78C1239E8AE8007EF27C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 023A78A5239E8AE4007EF27C /* Week2WeatherBoy */;
+			targetProxy = 023A78C0239E8AE8007EF27C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		023A78AF239E8AE4007EF27C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				023A78B0239E8AE4007EF27C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		023A78B7239E8AE8007EF27C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				023A78B8239E8AE8007EF27C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		023A78C6239E8AE8007EF27C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		023A78C7239E8AE8007EF27C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		023A78C9239E8AE8007EF27C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z6HYJ5UY9Q;
+				INFOPLIST_FILE = Week2WeatherBoy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = MAC.Week2WeatherBoy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		023A78CA239E8AE8007EF27C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z6HYJ5UY9Q;
+				INFOPLIST_FILE = Week2WeatherBoy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = MAC.Week2WeatherBoy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		023A78CC239E8AE8007EF27C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z6HYJ5UY9Q;
+				INFOPLIST_FILE = Week2WeatherBoyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = MAC.Week2WeatherBoyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Week2WeatherBoy.app/Week2WeatherBoy";
+			};
+			name = Debug;
+		};
+		023A78CD239E8AE8007EF27C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z6HYJ5UY9Q;
+				INFOPLIST_FILE = Week2WeatherBoyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = MAC.Week2WeatherBoyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Week2WeatherBoy.app/Week2WeatherBoy";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		023A78A1239E8AE4007EF27C /* Build configuration list for PBXProject "Week2WeatherBoy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				023A78C6239E8AE8007EF27C /* Debug */,
+				023A78C7239E8AE8007EF27C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		023A78C8239E8AE8007EF27C /* Build configuration list for PBXNativeTarget "Week2WeatherBoy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				023A78C9239E8AE8007EF27C /* Debug */,
+				023A78CA239E8AE8007EF27C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		023A78CB239E8AE8007EF27C /* Build configuration list for PBXNativeTarget "Week2WeatherBoyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				023A78CC239E8AE8007EF27C /* Debug */,
+				023A78CD239E8AE8007EF27C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		023A78B2239E8AE4007EF27C /* Week2WeatherBoy.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				023A78B3239E8AE4007EF27C /* Week2WeatherBoy.xcdatamodel */,
+			);
+			currentVersion = 023A78B3239E8AE4007EF27C /* Week2WeatherBoy.xcdatamodel */;
+			path = Week2WeatherBoy.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 023A789E239E8AE4007EF27C /* Project object */;
+}
