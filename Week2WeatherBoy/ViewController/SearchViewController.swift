@@ -76,6 +76,7 @@ class SearchViewController: UIViewController {
     private func setupSearch() {
         get()
         loadSearchView()
+        searchTableView.tableFooterView = UIView(frame: .zero) // remove unused table cells
     }
     
     private func get() {
@@ -150,7 +151,8 @@ extension SearchViewController: UITableViewDataSource {
         let cities = isFiltering ? filteredCities : getCities(from: indexPath.section)
         let city = cities[indexPath.row] // subscript to get the correct city for row
         cell.mainLabel.text = "\(city.name), \(city.state)"
-        cell.subLabel.text = "Population: \(city.population)"
+        let pop = city.population.addCommas ?? "0" // nil-coalescing - give default value to optional
+        cell.subLabel.text = "Population: \(pop)" // set sub label
         return cell
     }
     
