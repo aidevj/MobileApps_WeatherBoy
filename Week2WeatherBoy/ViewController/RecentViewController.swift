@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RecentViewController.swift
 //  Week2WeatherBoy
 //
 //  Created by Consultant on 12/9/19.
@@ -8,13 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class RecentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
+    
 
 
 }
-
