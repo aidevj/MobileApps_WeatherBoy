@@ -60,8 +60,14 @@ class SearchViewController: UIViewController {
     private func filter(with search: String) {
         filteredCities = [] // clear array
         
+        // Trim leading and trailing spaces ??
+        let trimmedSearch = search.trimmingCharacters(in: .whitespaces)
+        
+        // TRY: getting rid of all spaces?? Do most search bars even do that
+        
         for city in cities {
-            if city.state.contains(search) || city.name.contains(search) {
+            // ASSIGNMENT: change all to uppercase to ignore cases
+            if city.state.uppercased().contains(trimmedSearch.uppercased()) || city.name.uppercased().contains(trimmedSearch.uppercased()) {
                 filteredCities.append(city)
             }
         }
@@ -187,6 +193,7 @@ extension SearchViewController: UISearchBarDelegate, UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         print(searchController.searchBar.text!)
         
-        //let search = searchController.
+        let search = searchController.searchBar.text!
+        filter(with: search)
     }
 }
