@@ -14,4 +14,16 @@ struct City {
     let state: String
     let population: String
     let coordinates: CLLocationCoordinate2D
+
+}
+
+extension City {
+    // for persistent data loading
+    init(_ core: CoreCity) {
+        self.name = core.name!  // need to unwrap because Objective C doesn't have optionals, which data models are in
+        self.state = core.state!
+        self.population = core.population!
+        let coord = CLLocationCoordinate2D(latitude: core.latitude, longitude: core.longitude)
+        self.coordinates = coord
+    }
 }

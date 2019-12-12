@@ -61,16 +61,21 @@ class SearchViewController: UIViewController {
         filteredCities = [] // clear array
         
         // Trim leading and trailing spaces ??
-        let trimmedSearch = search.trimmingCharacters(in: .whitespaces)
+        //let trimmedSearch = search.trimmingCharacters(in: .whitespaces)
         
         // TRY: getting rid of all spaces?? Do most search bars even do that
         
-        for city in cities {
-            // ASSIGNMENT: change all to uppercase to ignore cases
-            if city.state.uppercased().contains(trimmedSearch.uppercased()) || city.name.uppercased().contains(trimmedSearch.uppercased()) {
-                filteredCities.append(city)
-            }
-        }
+//        for city in cities {
+//            // ASSIGNMENT: change all to uppercase to ignore cases (for some reason this fixes the space problem in words)
+//            if city.state.uppercased().contains(trimmedSearch.uppercased()) || city.name.uppercased().contains(trimmedSearch.uppercased()) {
+//                filteredCities.append(city)
+//            }
+//        }
+        
+        // ALT: Fast way to filter using higher order function
+        filteredCities = cities.filter({
+            $0.state.uppercased().contains(search.uppercased()) || $0.name.uppercased().contains(search.uppercased())
+        })
         
         searchTableView.reloadData()
     }
@@ -78,7 +83,7 @@ class SearchViewController: UIViewController {
     //MARK: Sort
     
     
-    //MARK: Funcitonality
+    //MARK: Functionality
     private func setupSearch() {
         get()
         loadSearchView()
@@ -184,8 +189,19 @@ extension SearchViewController: UITableViewDelegate {
     // controls touch events on table view cells
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true) // deselect after tap
+        let cities = isFiltering ? filteredCities : getCities(from: indexPath.section)
+        let city = cities[indexPath.row]
+        
+        CityManager.shared.save(city)
+        
+        // new instance of view controller and present it
+        let mapVC = storyboard?.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+        
+        mapVC.hidesBottomBarWhenPushed = true
+        mapVC.city = city   // send the information foward
+        navigationController?.view.backgroundColor = .white
+        navigationController?.pushViewController(mapVC, animated: true) // push VC onto stack (back button)
     }
-    
 }
 
 //MARK: Search Bar
@@ -193,7 +209,8 @@ extension SearchViewController: UISearchBarDelegate, UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         print(searchController.searchBar.text!)
         
-        let search = searchController.searchBar.text!
+        //let search = searchController.searchBar.text!
+        guard let search = searchController.searchBar.text else { return }
         filter(with: search)
     }
 }

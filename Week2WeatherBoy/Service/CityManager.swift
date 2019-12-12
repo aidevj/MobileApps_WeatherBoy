@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreLocation
+import CoreData
 
 // nickname for data structure, funcitonality, etc.
 typealias CityHandler = ([City]) -> Void
@@ -41,6 +42,7 @@ final class CityManager {
         // GCD - Grand Central Dispatch - low level API to perform multi-threading (change threads)
         // background thread asynchronously
         DispatchQueue.global().async {
+            
             // create url from path
             let url = URL(fileURLWithPath: path)
             do {
@@ -73,11 +75,104 @@ final class CityManager {
                 return
             }
             
-            
-            
         }
         
     } // end func
     
+    //MARK: Core Functionality
+    
+    // context is middle ground for where objects are modified and updated
+    // lazy doesn't initialize the object until it's called (saves memory allocation, esp if it's a big object to be loaded)
+    lazy var context: NSManagedObjectContext = {
+        // used to modify, update, save entities - the space that entities are created
+        return persistentContainer.viewContext
+    }()
+    
+    // NSPersistentContainer is where the objects are stored (out datamodel file)
+    var persistentContainer: NSPersistentContainer = {
+        // stored the saves entities
+        var container = NSPersistentContainer(name: "Week2WeatherBoy")
+        
+        container.loadPersistentStores { (storeDescrip, err) in
+            if let error = err {
+                fatalError(error.localizedDescription)  // sends crash report
+            }
+        }
+        
+        return container
+    }()
+    
+    // helper function to save and retrieve our cities
+    
+    //MARK: Save
+    func save(_ city:City) {
+        
+        //1. Need new core city entity to put into core data
+        let entity = NSEntityDescription.entity(forEntityName: "CoreCity", in: context)!    // needs to be unwrapped to work on next line
+        let coreCity = CoreCity(entity: entity, insertInto: context)
+        
+        coreCity.name = city.name
+        coreCity.state = city.state
+        coreCity.population = city.population
+        coreCity.latitude = city.coordinates.latitude
+        coreCity.longitude = city.coordinates.longitude
+        
+        print("Saved City: \(city.name)")
+        // doesn't persist unless save context
+        saveContext()
+    }
+    
+    //MARK: Load
+    
+    // return an array of Cities, rather than Core Cities, keeps it from being intertangled with core cities so we can easily access cities
+    func load() -> [City] {
+        
+        let fetchRequest = NSFetchRequest<CoreCity>(entityName: "CoreCity")
+        
+        var cities = [City]()
+        
+        do {
+            let coreCities = try context.fetch(fetchRequest) // returns an array of <CoreCity>
+            coreCities.forEach({cities.append(City($0))})
+            /** // Long hand version of above line
+            for core in coreCities {
+                let city = City(core)
+                cities.append(city(
+             }
+            **/
+        } catch {
+            print("Couldn't fetch Core: \(error.localizedDescription)")
+        }
+        
+        return cities
+    }
+    
+    //MARK: Delete
+    
+    func delete(_ city: City) {
+        let fetchRequest = NSFetchRequest<CoreCity>(entityName: "CoreCity") // fetches all the core cities
+        let namePredicate = NSPredicate(format: "name==%@", city.name)
+        let statePredicate = NSPredicate(format: "state==%@", city.state)
+        // add predicates together in a compound predicate
+        let compound = NSCompoundPredicate(andPredicateWithSubpredicates: [statePredicate, namePredicate])
+        fetchRequest.predicate = compound
+        
+        do {
+            let coreCities = try context.fetch(fetchRequest)
+            guard let core = coreCities.first else { return }
+            context.delete(core)
+            saveContext()
+            print("Deleted city: \(city.name), \(city.state)")
+        } catch {
+            print("Couldn't delete Core: \(city.name)")
+        }
+    }
 
+    func saveContext() {
+        do {
+            try context.save()
+        } catch{
+            fatalError(error.localizedDescription)
+        }
+    }
 }
