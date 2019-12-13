@@ -192,15 +192,7 @@ extension SearchViewController: UITableViewDelegate {
         let cities = isFiltering ? filteredCities : getCities(from: indexPath.section)
         let city = cities[indexPath.row]
         
-        CityManager.shared.save(city)
-        
-        // new instance of view controller and present it
-        let mapVC = storyboard?.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
-        
-        mapVC.hidesBottomBarWhenPushed = true
-        mapVC.city = city   // send the information foward
-        navigationController?.view.backgroundColor = .white
-        navigationController?.pushViewController(mapVC, animated: true) // push VC onto stack (back button)
+        showMap(of: city)
     }
 }
 
