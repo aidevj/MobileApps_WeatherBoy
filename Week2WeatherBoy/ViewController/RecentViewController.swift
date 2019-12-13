@@ -66,9 +66,7 @@ extension RecentViewController: UITableViewDataSource, UITableViewDelegate {
             let city = cities[indexPath.row]
             CityManager.shared.delete(city) // delete city from CoreData
             cities.remove(at: indexPath.row) // remove city form array (data source)
-            //tableView.deleteRows(at: [indexPath.row], with: .)
-            
-            //TODO: Delete data source city
+
             //Reload table view
         }
     }

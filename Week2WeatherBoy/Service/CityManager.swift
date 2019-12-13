@@ -133,16 +133,34 @@ final class CityManager {
         
         do {
             let coreCities = try context.fetch(fetchRequest) // returns an array of <CoreCity>
-            coreCities.forEach({cities.append(City($0))})
-            /** // Long hand version of above line
+            //coreCities.forEach({cities.append(City($0))})
+            // Long hand version of above line
             for core in coreCities {
                 let city = City(core)
-                cities.append(city(
+                
+                // ASSIGNMENT: ignore duplicates but done badly
+                var isDuplicate: Bool = false
+                for cty in cities {
+                    if cty.name == city.name && cty.state == city.state {
+                        isDuplicate = true
+                    }
+                }
+                
+                if !isDuplicate {
+                    cities.append(city)
+                }
              }
-            **/
         } catch {
             print("Couldn't fetch Core: \(error.localizedDescription)")
         }
+        
+        // ASSIGNMENT: limit to 10 cities
+        if cities.count >= 10 {
+            cities.removeFirst()
+        }
+        
+        // ASSIGNMENT: flip cities to be in ascending order (most recent at top)
+        cities.reverse()
         
         return cities
     }
