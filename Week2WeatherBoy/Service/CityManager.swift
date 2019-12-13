@@ -107,6 +107,8 @@ final class CityManager {
     //MARK: Save
     func save(_ city:City) {
         
+        removeDuplicates(city)
+        
         //1. Need new core city entity to put into core data
         let entity = NSEntityDescription.entity(forEntityName: "CoreCity", in: context)!    // needs to be unwrapped to work on next line
         let coreCity = CoreCity(entity: entity, insertInto: context)
@@ -133,36 +135,16 @@ final class CityManager {
         
         do {
             let coreCities = try context.fetch(fetchRequest) // returns an array of <CoreCity>
-            //coreCities.forEach({cities.append(City($0))})
-            // Long hand version of above line
             for core in coreCities {
                 let city = City(core)
-                
-                // ASSIGNMENT: ignore duplicates but done badly
-                var isDuplicate: Bool = false
-                for cty in cities {
-                    if cty.name == city.name && cty.state == city.state {
-                        isDuplicate = true
-                    }
-                }
-                
-                if !isDuplicate {
-                    cities.append(city)
-                }
+            
+                cities.append(city)
              }
         } catch {
             print("Couldn't fetch Core: \(error.localizedDescription)")
         }
         
-        // ASSIGNMENT: limit to 10 cities
-        if cities.count >= 10 {
-            cities.removeFirst()
-        }
-        
-        // ASSIGNMENT: flip cities to be in ascending order (most recent at top)
-        cities.reverse()
-        
-        return cities
+        return cities.reversed() // ascending order
     }
     
     //MARK: Delete
@@ -184,6 +166,43 @@ final class CityManager {
         } catch {
             print("Couldn't delete Core: \(city.name)")
         }
+    }
+    
+    
+    func removeDuplicates(_ city: City) {
+        // check for duplicate city, if so, delete old and save the new so that the newest one goes to the top
+        // then continue to keep ascending order
+        check(city)
+        
+        let allCore = load() // get all core cities and chekc the count, if >= 10, delete last city
+        
+        if allCore.count >= 10 {
+            delete(allCore.last!)
+        }
+    }
+    
+    //MARK: Helper
+    
+    func check(_ city: City) {
+        
+        let fetchRequest = NSFetchRequest<CoreCity>(entityName: "CoreCity") // fetch request
+        let namePredicate = NSPredicate(format: "name==%@", city.name) // get name of city
+        let statePredicate = NSPredicate(format: "state==%@", city.state) // get state of city
+        let compound = NSCompoundPredicate(andPredicateWithSubpredicates: [statePredicate, namePredicate])
+        fetchRequest.predicate = compound // narrow search criteria with predicate
+        fetchRequest.fetchLimit = 1 // limit amount of objects returned
+        
+        //var coreCities = [CoreCity]() // container for core cities
+        
+        do {
+            let coreCities = try context.fetch(fetchRequest)
+            guard let core = coreCities.first else { return }
+            context.delete(core)
+            print("Removed Duplicate: \(city.name), \(city.state)")
+        } catch let yellow {
+            print("Couldn't Fetch Core: \(yellow.localizedDescription)")
+        }
+        
     }
 
     func saveContext() {

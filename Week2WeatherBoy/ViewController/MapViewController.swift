@@ -20,6 +20,7 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupMap()
+        setupButton()
     }
     
     private func setupMap() {
@@ -40,10 +41,21 @@ class MapViewController: UIViewController {
         mapView.setRegion(region, animated: true)
     }
     
+    private func setupButton() {
+        let weatherButton = UIBarButtonItem(barButtonSystemItem: .play, target: self, action: #selector(showWeatherAlert)) // button is now connected to show weather fucntion
+        navigationItem.rightBarButtonItem = weatherButton
+    }
+    
+    @objc private func showWeatherAlert() {
+        guard let wthr = weather, let cty = city else { return } // safetly unwrap properties
+        let alertVC = AlertViewController.instance((cty, wthr))
+        present(alertVC, animated: true, completion: nil)
+    }
+    
     private func getWeather() {
-        WeatherService.shared.getWeather(from: city) { wthr in
+        WeatherService.shared.getWeather(from: city) { [weak self] wthr in // note: escaping closure - risk of retain cycles
             guard let weather = wthr else { return }
-            self.weather = weather
+            self?.weather = weather
             print("Current weather: \(weather.description)")
         }
     }

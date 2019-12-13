@@ -70,4 +70,8 @@ extension RecentViewController: UITableViewDataSource, UITableViewDelegate {
             //Reload table view
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
